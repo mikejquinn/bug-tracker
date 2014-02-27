@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140227021320) do
+ActiveRecord::Schema.define(:version => 20140227124359) do
 
   create_table "bug_statuses", :force => true do |t|
     t.string "description"
@@ -30,9 +30,10 @@ ActiveRecord::Schema.define(:version => 20140227021320) do
   add_index "bugs", ["project_id"], :name => "bugs_project_id_fk"
 
   create_table "projects", :force => true do |t|
-    t.string   "title",      :null => false
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "title",       :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string   "description", :null => false
   end
 
   add_foreign_key "bugs", "bug_statuses", name: "bugs_bug_status_id_fk"
