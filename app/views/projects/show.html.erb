@@ -10,11 +10,14 @@
 </div>
 
 <% if @bugs.empty? %>
-  <p>
+  <p class="small">
   No bugs have been filed.
   <%= link_to "Click here to file one", new_project_bug_path(@project) %>
   </p>
 <% else %>
+  <p class="small">
+  We are currently tracking <%= pluralize(@bugs.count, "bug") %>:
+  </p>
   <table class="styled">
     <thead>
       <tr>

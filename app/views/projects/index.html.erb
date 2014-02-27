@@ -6,7 +6,14 @@
   </div>
 </div>
 
-<p class="small">We're currently tracking bugs for <%= pluralize(@projects.count, "project") %>:</p>
+<p class="small">
+<% if @projects.count.eql? 0 %>
+  We aren't tracking any projects yet. <%= link_to "Create a new project", new_project_path %>
+  to get started.
+<% else %>
+  We're currently tracking bugs for <%= pluralize(@projects.count, "project") %>:
+<% end %>
+</p>
 
 <ul class="project-list">
   <% @projects.each do |project| %>
