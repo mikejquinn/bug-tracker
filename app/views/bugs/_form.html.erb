@@ -24,6 +24,6 @@
     <%= f.select :bug_status_id, bug_status_select_options %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit %><%= link_to "cancel", project_path(@project), class: "cancel" %>
   </div>
 <% end %>

@@ -1,5 +1,5 @@
-<h1>Editing bug</h1>
+<h1><%= @project.title %></h1>
+
+<h2>Editing bug</h2>
 
 <%= render partial: 'form', locals: { url: project_bug_path(@project, @bug) } %>
-
-<%= link_to 'Back', project_path(@project) %>

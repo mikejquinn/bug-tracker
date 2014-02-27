@@ -1,20 +1,29 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @bug.title %>
-</p>
+<div class="title-with-controls">
+  <h1><%= @project.title %> - Bug ID: <%= @bug.id %></h1>
 
-<p>
-  <b>Description:</b>
-  <%= @bug.description %>
-</p>
-
-<p>
-  <b>Status:</b>
-  <%= @bug.status.description %>
-</p>
+  <div id="page-controls">
+    <%= link_to 'Edit this bug', edit_project_bug_path(@project, @bug) %>
+  </div>
+</div>
 
 
-<%= link_to 'Edit', edit_project_bug_path(@project, @bug) %> |
-<%= link_to 'Back', project_path(@project) %>
+<div class="field-list">
+  <div class="field">
+    <div class="field-name">Title:</div>
+    <div><%= @bug.title %></div>
+  </div>
+
+  <div class="field">
+    <div class="field-name">Description:</div>
+    <div><%= @bug.description %></div>
+  </div>
+
+  <div class="field">
+    <div class="field-name">Status:</div>
+    <div><%= @bug.status.description %></div>
+  </div>
+</div>
+
+<%= link_to "<< Back to project", project_path(@project) %>
