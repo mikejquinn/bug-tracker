@@ -7,6 +7,7 @@ class BugsController < ApplicationController
 
   def new
     @bug = @project.bugs.build
+    @bug.status = BugStatus.find(BugStatus::NEW)
   end
 
   def edit
