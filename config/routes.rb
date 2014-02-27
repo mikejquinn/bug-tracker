@@ -1,5 +1,7 @@
 BugTracker::Application.routes.draw do
 
+  match "/" => "main#index"
+
   resources :projects do
     resources :bugs, except: [:index, :delete]
   end
