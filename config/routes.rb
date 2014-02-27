@@ -1,8 +1,8 @@
 BugTracker::Application.routes.draw do
-  resources :bugs
 
-
-  resources :projects
+  resources :projects do
+    resources :bugs, except: [:index, :delete]
+  end
 
 
   # The priority is based upon order of creation:

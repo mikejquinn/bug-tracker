@@ -1,4 +1,4 @@
-<%= form_for(@bug) do |f| %>
+<%= form_for(@bug, url: url) do |f| %>
   <% if @bug.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@bug.errors.count, "error") %> prohibited this bug from being saved:</h2>
@@ -18,6 +18,10 @@
   <div class="field">
     <%= f.label :description %><br />
     <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :bug_status_id %><br />
+    <%= f.select :bug_status_id, bug_status_select_options %>
   </div>
   <div class="actions">
     <%= f.submit %>

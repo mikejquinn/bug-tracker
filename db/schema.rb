@@ -20,12 +20,14 @@ ActiveRecord::Schema.define(:version => 20140227021320) do
   create_table "bugs", :force => true do |t|
     t.string   "title",         :null => false
     t.text     "description",   :null => false
+    t.integer  "project_id",    :null => false
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
     t.integer  "bug_status_id", :null => false
   end
 
   add_index "bugs", ["bug_status_id"], :name => "bugs_bug_status_id_fk"
+  add_index "bugs", ["project_id"], :name => "bugs_project_id_fk"
 
   create_table "projects", :force => true do |t|
     t.string   "title",      :null => false
@@ -34,5 +36,6 @@ ActiveRecord::Schema.define(:version => 20140227021320) do
   end
 
   add_foreign_key "bugs", "bug_statuses", name: "bugs_bug_status_id_fk"
+  add_foreign_key "bugs", "projects", name: "bugs_project_id_fk"
 
 end
