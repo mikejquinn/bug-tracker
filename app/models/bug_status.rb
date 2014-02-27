@@ -1,5 +1,6 @@
 class BugStatus < ActiveRecord::Base
   attr_accessible :description
+  has_many :bugs
 
   NEW = 1
   IN_PROGRESS = 2
