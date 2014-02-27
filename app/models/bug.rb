@@ -6,6 +6,10 @@ class Bug < ActiveRecord::Base
 
   after_initialize :set_default_status
 
+  validates :title, presence: true
+  validates :description, presence: true
+  validates :bug_status_id, inclusion: { in: BugStatus::ALL_STATUSES.keys }
+
   protected
 
   def set_default_status
