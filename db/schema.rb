@@ -26,9 +26,6 @@ ActiveRecord::Schema.define(:version => 20140227124359) do
     t.integer  "bug_status_id", :null => false
   end
 
-  add_index "bugs", ["bug_status_id"], :name => "bugs_bug_status_id_fk"
-  add_index "bugs", ["project_id"], :name => "bugs_project_id_fk"
-
   create_table "projects", :force => true do |t|
     t.string   "title",       :null => false
     t.datetime "created_at",  :null => false
