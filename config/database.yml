@@ -49,5 +49,4 @@ production:
   encoding: unicode
   database: bug_tracker_production
   pool: 5
-  username: bug_tracker
   password:
