@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+BugStatus::ALL_STATUSES.each do |id, description|
+  BugStatus.where(id: id, description: description).first_or_create
+end
