@@ -3,6 +3,9 @@
 <head>
   <title>BugTracker</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
+  <% if Rails.env.development? %>
+    <%= javascript_include_tag "vendor/live_css" %>
+  <% end %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
